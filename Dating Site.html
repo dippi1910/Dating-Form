@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>        
+<script type="text/javascript">
+	function checkpassword()
+	{ if(MyForm.Password.value=="")
+      alert("You need to enter a Password");
+      else
+      	confirm("are you Sure you want to proceed?");
+  }
+</script>	
+
+
+ 
+	<title>Dating World</title>
+	
+
+
+	<style type="text/css">
+	    fieldset{background-color: lightyellow;
+	             border-color:yellow; 
+	             border: 10px solid yellow;
+	             margin-bottom:10px;
+	             width: 720px;
+	            }
+
+          label{ display: inline-block;
+		       text-align: right;
+		       text-align: top;
+		       width: 180px; 
+		       }
+
+		 body{
+			 background-image: url("http://blog.pickyourtrail.com/wp-content/uploads/2016/02/romance.jpg");
+			 background-position: 380px;
+			 background-attachment: fixed;
+             background-repeat: repeat-x;
+             }     
+
+		.buttons{ width: auto; }
+          textarea{  width: 360px;
+		           height: 50px;}
+          
+		 range{text-align:center;}
+
+		 .rangeWord {
+			text-align: center;
+			width: 80px;
+		} 
+		.rangeWordLeft {
+			background: red;
+		}
+		.rangeWordRight {
+			background: purple;}
+
+	label:hover { font-size:40px }
+</style>
+
+
+
+</head>
+
+
+<body onload="Check_user_age()";>
+
+
+
+<h1 align="center" style="color: rgb(130,100,110);"><b>Welcome to the Dating Site</b></h1>
+<br>
+<br>
+
+<h2><i>Please enter your details.......!!! </i></h2>
+
+<!--Form Starting -->
+
+<form id="MyForm" >
+
+<fieldset>
+	<legend><b>Your face<b></legend>
+	<label for="Image">Your Image</label>
+	<input type="file" name="img" required="required" id="Image"><br>
+
+	
+	
+</fieldset>
+
+<br>
+
+<fieldset>
+	<legend>Your general details</legend>
+	<label for="name">Name</label> 
+	<input type="text" name="Name" required="required" id="name">
+	<br>
+	
+	<label  for="Gender">Gender</label>:
+	
+	<input type="radio" name="Gender" value="Male" required="required" id="Male">
+	<label for="Male" class="buttons">Male</label>
+	       <input type="radio" name="Gender" value="Female" required="required" id="Female">
+	       <label class="buttons" for="Female">Female</label>
+	                  <input type="radio" name="Gender" value="other" required="required" id="Any other" >
+	                  <label for="Any other" class="buttons">Any other</label>
+	         <br>
+
+	<label for="Age(between 18 to 50):">Age(between 18 to 50):</label>
+	<input type="number" name="Quantity" min="18" max="50" id="Age(between 18 to 50):"><br>
+
+	<label for="Date of birth">Date of birth:</label>
+	<input type="Date" name="Birthday" id="Date of birth"><br>
+
+	<label for="Favourite">Favourite Color:</label>
+	<input type="color" name="Favourite" id="Favourite"><br>
+    
+    <label for="country">Which country</label>
+     <select name="country" id="country">
+     <option value="No selection">No selection</option>
+     <option value="USA">USA</option>
+     <option value="India">India</option>
+     <option value="Russia">Russia</option>
+     <option value="Germany">Germany</option>
+     <option value="England">England</option>
+     <option value="Australia">Australia</option>
+     <option value="Japan">Japan</option>
+     	
+     </select>
+</fieldset>
+<br>
+   <fieldset>
+   		<legend>Your Indicator</legend>
+   	   <div>
+   	   <label for="Height">Height:</label>
+				<label class="rangeWord rangeWordLeft" for="Height">Short</label>
+				<input type="range" name="Height" id="Height" min="0" max="100">
+				<label class="rangeWord rangeWordRight" for="Height">Tall</label>
+
+</div>
+<div>
+				<label for="Salary">Salary:</label>
+				<label class="rangeWord rangeWordLeft" for="Salary">Poor</label>
+				<input type="range" name="Salary" id="Salary" min="0" max="100">
+				<label class="rangeWord rangeWordRight" for="Salary">Rich</label>
+</div>
+   </fieldset>
+   <br>
+   
+
+   <fieldset>
+   	<legend>Your contact information</legend>
+   	 
+   	 <label for="Email">Enter your email:</label>
+   	 <input type="email" name="email" required="required" id="Email"><br>
+   	 
+   	 <label for="Password">Password</label>
+   	 <input type="Password" name="Password"  id="Password" value=""/>
+   	 <br>  
+   	 
+
+   	 <br>
+   	 <label for="phone">Enter your Phone number</label>
+   	 <input type="phone" name="phone number" id="phone"><br>
+   	 
+   	 <label for="address"><p>Address:</p></label>
+   	 
+   	 <textarea rows="5" cols="60" id="address">
+   	 	Please enter your text here
+   	 </textarea>
+   	 <br>
+   	 <br>
+
+   	 Types of contact method :
+
+   	 <input type="Checkbox" name="contact" id="contact">
+   	 <label class="buttons" for="contact">Email</label>
+   	 <input type="Checkbox" name="Whatsapp" id="Whatsapp">
+   	 <label class="buttons" for="Whatsapp">Whatsapp</label>
+   	 <input type="Checkbox" name="chats" id="chats">
+   	 <label class="buttons" for="chats">In app Chats</label>
+   	 <br>
+   	 <input type="button" id="continue" value="continue" onclick="checkpassword()" style="">
+   </fieldset>
+
+
+</form>  
+
+<script>
+    function Check_user_age()
+      {  if(age_of_user()<18)
+        	alert("Please go to another page")
+
+}
+function age_of_user()
+{ var age_text,age;
+   age_text=prompt(" Welcome to my website .....What is your age??(only 18 and above)")
+   age=parseInt(age_text);
+   return age;
+}   	
+ </script>
+
+</body>
+</html>
